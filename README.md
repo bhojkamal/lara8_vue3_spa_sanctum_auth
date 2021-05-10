@@ -9,18 +9,10 @@ Technologies are:
 
 **followed from shouts.dev**
 
-It's now woking something error. displaying nothing at the momment and there are two errors on console.
-The error on console are:
+It is workking, once register or login, it is not redirecting to the dashboard or booklist.
 
 ```
-1st error: Uncaught SyntaxError: Unexpected token '!'
-2nd error: app.js:19696 Uncaught TypeError: Cannot read property 'isLoggedin' of undefined
-
-1st warning:
+1st warning on console:
 app.js:12228 You are running the esm-bundler build of Vue. It is recommended to configure your bundler to explicitly replace feature flag globals with boolean literals to get proper tree-shaking in the final bundle. See http://link.vuejs.org/feature-flags for more details.
-
-2nd warning:
-[Vue warn]: Unhandled error during execution of created hook
-  at <App>
 
 ```
