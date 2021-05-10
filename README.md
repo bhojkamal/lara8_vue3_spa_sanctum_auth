@@ -1,4 +1,4 @@
-## Project with laravel 8 spa - sanctum auth with vue 3
+## Project with laravel 8 spa - sanctum auth with vue 3 with all latest technologies
 
 Technologies are:
 

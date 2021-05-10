@@ -9,5 +9,6 @@ import 'bootstrap/dist/js/bootstrap.min';
 
 const app = createApp(App);
 app.config.globalProperties.$axios = axios;
+// app.prototype.$axios = axios;
 app.use(router)
 app.mount('#app')

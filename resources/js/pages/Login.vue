@@ -12,22 +12,22 @@
                     <div class="card-body">
                         <form>
                             <div class="form-group row">
-                                <label for="email" class="col-sm-4 col-form-label text-md-right">E-Mail Address</label>
+                                <label for="email" class="col-sm-4 col-form-label text-md-end">E-Mail Address</label>
                                 <div class="col-md-6">
-                                    <input id="email" type="email" class="form-control" v-model="email" required
+                                    <input id="email" type="email" class="form-control mb-2" v-model="email" required
                                            autofocus autocomplete="off">
                                 </div>
                             </div>
 
                             <div class="form-group row">
-                                <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
+                                <label for="password" class="col-md-4 col-form-label text-md-end">Password</label>
                                 <div class="col-md-6">
-                                    <input id="password" type="password" class="form-control" v-model="password"
+                                    <input id="password" type="password" class="form-control mb-2" v-model="password"
                                            required autocomplete="off">
                                 </div>
                             </div>
 
-                            <div class="form-group row mb-0">
+                            <div class="form-group row mb-1">
                                 <div class="col-md-8 offset-md-4">
                                     <button type="submit" class="btn btn-primary" @click="handleSubmit">
                                         Login

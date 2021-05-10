@@ -19697,6 +19697,11 @@ __webpack_require__.r(__webpack_exports__);
       this.isLoggedIn = true;
     }
   },
+  mounted: function mounted() {
+    if (window.Laravel.isLoggedin) {
+      this.isLoggedIn = true;
+    }
+  },
   methods: {
     logout: function logout(e) {
       var _this = this;
@@ -20031,8 +20036,8 @@ __webpack_require__.r(__webpack_exports__);
       e.preventDefault();
 
       if (this.password.length > 0) {
-        axios.get('/sanctum/csrf-cookie').then(function (response) {
-          axios.post('api/register', {
+        this.$axios.get('/sanctum/csrf-cookie').then(function (response) {
+          _this.$axios.post('api/register', {
             name: _this.name,
             email: _this.email,
             password: _this.password
@@ -20082,12 +20087,7 @@ var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("
   style: {
     "margin": "20px 0px 20px 0px"
   }
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("a", {
-  href: "https://shouts.dev/",
-  target: "_blank"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("img", {
-  src: "https://i.imgur.com/Nt3kJXa.png"
-})]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("br"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", {
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <a href=\"\" target=\"_blank\"><img src=\"\"></a> "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("br"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", {
   "class": "text-secondary"
 }, "Laravel SPA with Vue 3, Auth (Sanctum), CURD Example")], -1
 /* HOISTED */
@@ -20560,7 +20560,7 @@ var _hoisted_8 = {
 
 var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
   "for": "email",
-  "class": "col-sm-4 col-form-label text-md-right"
+  "class": "col-sm-4 col-form-label text-md-end"
 }, "E-Mail Address", -1
 /* HOISTED */
 );
@@ -20574,7 +20574,7 @@ var _hoisted_11 = {
 
 var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
   "for": "password",
-  "class": "col-md-4 col-form-label text-md-right"
+  "class": "col-md-4 col-form-label text-md-end"
 }, "Password", -1
 /* HOISTED */
 );
@@ -20583,7 +20583,7 @@ var _hoisted_13 = {
   "class": "col-md-6"
 };
 var _hoisted_14 = {
-  "class": "form-group row mb-0"
+  "class": "form-group row mb-1"
 };
 var _hoisted_15 = {
   "class": "col-md-8 offset-md-4"
@@ -20594,7 +20594,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_5, [_hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("form", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_8, [_hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
     id: "email",
     type: "email",
-    "class": "form-control",
+    "class": "form-control mb-2",
     "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
       return $data.email = $event;
     }),
@@ -20606,7 +20606,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.email]])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_11, [_hoisted_12, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_13, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
     id: "password",
     type: "password",
-    "class": "form-control",
+    "class": "form-control mb-2",
     "onUpdate:modelValue": _cache[2] || (_cache[2] = function ($event) {
       return $data.password = $event;
     }),
@@ -20671,7 +20671,7 @@ var _hoisted_8 = {
 
 var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
   "for": "name",
-  "class": "col-sm-4 col-form-label text-md-right"
+  "class": "col-sm-4 col-form-label text-md-end"
 }, "Name", -1
 /* HOISTED */
 );
@@ -20685,7 +20685,7 @@ var _hoisted_11 = {
 
 var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
   "for": "email",
-  "class": "col-sm-4 col-form-label text-md-right"
+  "class": "col-sm-4 col-form-label text-md-end"
 }, "E-Mail Address", -1
 /* HOISTED */
 );
@@ -20699,7 +20699,7 @@ var _hoisted_14 = {
 
 var _hoisted_15 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
   "for": "password",
-  "class": "col-md-4 col-form-label text-md-right"
+  "class": "col-md-4 col-form-label text-md-end"
 }, "Password", -1
 /* HOISTED */
 );
@@ -20708,7 +20708,7 @@ var _hoisted_16 = {
   "class": "col-md-6"
 };
 var _hoisted_17 = {
-  "class": "form-group row mb-0"
+  "class": "form-group row mb-2"
 };
 var _hoisted_18 = {
   "class": "col-md-8 offset-md-4"
@@ -20719,7 +20719,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_5, [_hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("form", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_8, [_hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
     id: "name",
     type: "email",
-    "class": "form-control",
+    "class": "form-control mb-2",
     "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
       return $data.name = $event;
     }),
@@ -20731,7 +20731,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.name]])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_11, [_hoisted_12, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_13, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
     id: "email",
     type: "email",
-    "class": "form-control",
+    "class": "form-control mb-2",
     "onUpdate:modelValue": _cache[2] || (_cache[2] = function ($event) {
       return $data.email = $event;
     }),
@@ -20743,7 +20743,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.email]])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_14, [_hoisted_15, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_16, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
     id: "password",
     type: "password",
-    "class": "form-control",
+    "class": "form-control mb-2",
     "onUpdate:modelValue": _cache[3] || (_cache[3] = function ($event) {
       return $data.password = $event;
     }),
@@ -25667,7 +25667,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var app = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createApp)(_App_vue__WEBPACK_IMPORTED_MODULE_3__.default);
-app.config.globalProperties.$axios = (axios__WEBPACK_IMPORTED_MODULE_2___default());
+app.config.globalProperties.$axios = (axios__WEBPACK_IMPORTED_MODULE_2___default()); // app.prototype.$axios = axios;
+
 app.use(_router__WEBPACK_IMPORTED_MODULE_1__.default);
 app.mount('#app');
 })();
